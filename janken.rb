@@ -1,3 +1,4 @@
+#じゃんけん
 def janken
     puts "[0]:グー\n[1]:チョキ\n[2]:パー"
     
@@ -42,6 +43,8 @@ puts "---------"
   
   puts "--------"
   
+#あっち向いてホイ  
+  
 def look_over_there
     puts "あっち向いて・・・・"
 
@@ -61,12 +64,8 @@ def look_over_there
     puts "-----"
     
     #勝敗を決める
-    if player_hand == program_hand
-       puts "あなたの勝ちです"
-       return false
-      
-    else
-      puts "もう一回じゃんけんです"
+    if player_hand != program_hand
+       puts "もう一回じゃんけんです"
       
       #ジャンケンをもう一回繰り返す
       next_game = true
@@ -77,6 +76,11 @@ def look_over_there
        next_game = janken
       end
       return true
+      
+    else
+         puts "あなたの勝ちです"
+         puts "終了です"
+         exit #強制終了
       
     end
 end
@@ -93,5 +97,4 @@ end
        one_game = look_over_there
      end
      
-     
-  puts "終了です"
+
